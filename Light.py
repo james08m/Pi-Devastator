@@ -19,6 +19,7 @@ class Light():
         GPIO.output(self.pin, False)
         
     def flash(self, value):
+        self.logger.info("[Light] - Flashing..")
         for x in range(value):
             self.turnOn()
             time.sleep(0.5)

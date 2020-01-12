@@ -1,4 +1,5 @@
 import RPi.GPIO as GPIO
+import curses
 import datetime
 import time
 import logging
@@ -43,13 +44,13 @@ if __name__ == "__main__":
 
     # Add the console handler to logger
     logger.addHandler(console_handler)
-
-    logger.info("Starting Pi-Devastator")
-    logger.info("Pi-Devastator Log opened")
+    logger.info("[Pi-Devastator] - Log opened")
+    logger.info("[Pi-Devastator] - Starting Pi-Devastator")
+    
     PiDevastator_On = True
 
     # GPIO Mode
-    logger.info("Setting GPIO mode to BOARD")
+    logger.info("[Pi-Devastator] - Setting GPIO mode to BOARD")
     GPIO.setmode(GPIO.BOARD)
 
     # Inititialise components
@@ -61,14 +62,28 @@ if __name__ == "__main__":
     
     light = Light(logger, PIN_LIGHT)
     
+    # Initialise curses
+    screen = curses.initscr()
+    screen.keypad(True)
+    
     # Signal initialisation complete
     light.flash(5)
+    light.turnOn()
 
-    #while(PiDevastator_On):
-       # print "do work"
+    # Event loop
+    while(PiDevastator_On):
+       char = screen.getch()
+       
+       if char == ord('q'):
+           PiDevastator_On = False;
 
-    logger.info("Cleaning GPIO PINs")
-    GPIO.cleanup() # Clear all GPIO pins for next utilisation
+    logging.info("[Pi-Devastator] - Closing curses..")
+    screen.keypad(False)
+    curses.endwin()
+    logging.info("[Pi-Devastator] - Closing curses..")
+    
+    logger.info("[Pi-Devastator] - Cleaning GPIO pins..")
+    GPIO.cleanup()
 
-    logger.info("Pi-Devastator Log closure")
+    logger.info("[Pi-Devastator] - Log closure")
 

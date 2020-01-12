@@ -1,129 +1,27 @@
-[ 2020-01-11 12:43:36,741 ]	[ INFO ]	Pi-Devastator Log opened
-[ 2020-01-11 12:43:36,742 ]	[ DEBUG ]	GPIO and PINs Initialisation
-[ 2020-01-11 17:41:25,876 ]	[ INFO ]	Pi-Devastator Log opened
-[ 2020-01-11 17:41:25,877 ]	[ DEBUG ]	GPIO and PINs Initialisation
-[ 2020-01-11 17:44:28,699 ]	[ INFO ]	Pi-Devastator Log opened
-[ 2020-01-11 17:44:28,700 ]	[ DEBUG ]	GPIO and PINs Initialisation
-[ 2020-01-11 17:46:39,500 ]	[ INFO ]	Pi-Devastator Log opened
-[ 2020-01-11 17:46:39,501 ]	[ DEBUG ]	GPIO and PINs Initialisation
-[ 2020-01-11 17:46:39,502 ]	[ INFO ]	Pi-Devastator Log closure
-[ 2020-01-11 17:46:43,882 ]	[ INFO ]	Pi-Devastator Log opened
-[ 2020-01-11 17:46:43,882 ]	[ DEBUG ]	GPIO and PINs Initialisation
-[ 2020-01-11 17:46:43,883 ]	[ INFO ]	Pi-Devastator Log closure
-[ 2020-01-11 17:47:02,182 ]	[ INFO ]	Pi-Devastator Log opened
-[ 2020-01-11 17:47:02,183 ]	[ DEBUG ]	GPIO and PINs Initialisation
-[ 2020-01-11 17:47:02,183 ]	[ INFO ]	Pi-Devastator Log closure
-[ 2020-01-11 17:59:50,072 ]	[ INFO ]	Pi-Devastator Log opened
-[ 2020-01-11 17:59:50,074 ]	[ DEBUG ]	GPIO and PINs Initialisation
-[ 2020-01-11 17:59:50,075 ]	[ INFO ]	Pi-Devastator Log closure
-[ 2020-01-11 18:08:44,546 ]	[ INFO ]	Starting Pi-Devastator
-[ 2020-01-11 18:08:44,547 ]	[ INFO ]	Pi-Devastator Log opened
-[ 2020-01-11 18:08:44,547 ]	[ DEBUG ]	Setting GPIO mode to BOARD
-[ 2020-01-11 18:08:44,547 ]	[ INFO ]	Setting up GPIO PINs
-[ 2020-01-11 18:08:44,548 ]	[ INFO ]	Cleaning GPIO PINs
-[ 2020-01-11 18:08:44,548 ]	[ INFO ]	Pi-Devastator Log closure
-[ 2020-01-11 18:36:24,146 ]	[ INFO ]	Starting Pi-Devastator
-[ 2020-01-11 18:36:24,147 ]	[ INFO ]	Pi-Devastator Log opened
-[ 2020-01-11 18:36:24,148 ]	[ INFO ]	Setting GPIO mode to BOARD
-[ 2020-01-11 18:36:24,148 ]	[ INFO ]	Setting up GPIO PINs
-[ 2020-01-11 18:36:34,160 ]	[ INFO ]	Cleaning GPIO PINs
-[ 2020-01-11 18:36:34,161 ]	[ INFO ]	Pi-Devastator Log closure
-[ 2020-01-11 18:39:30,126 ]	[ INFO ]	Starting Pi-Devastator
-[ 2020-01-11 18:39:30,127 ]	[ INFO ]	Pi-Devastator Log opened
-[ 2020-01-11 18:39:30,127 ]	[ INFO ]	Setting GPIO mode to BOARD
-[ 2020-01-11 18:39:30,127 ]	[ INFO ]	Setting up GPIO PINs
-[ 2020-01-11 18:39:30,127 ]	[ INFO ]	Flashing light
-[ 2020-01-11 18:39:40,138 ]	[ INFO ]	Cleaning GPIO PINs
-[ 2020-01-11 18:39:40,139 ]	[ INFO ]	Pi-Devastator Log closure
-[ 2020-01-11 18:41:04,070 ]	[ INFO ]	Starting Pi-Devastator
-[ 2020-01-11 18:41:04,071 ]	[ INFO ]	Pi-Devastator Log opened
-[ 2020-01-11 18:41:04,071 ]	[ INFO ]	Setting GPIO mode to BOARD
-[ 2020-01-11 18:41:04,072 ]	[ INFO ]	Setting up GPIO PINs
-[ 2020-01-11 18:41:04,072 ]	[ INFO ]	Flashing light
-[ 2020-01-11 18:41:14,083 ]	[ INFO ]	Cleaning GPIO PINs
-[ 2020-01-11 18:41:14,084 ]	[ INFO ]	Pi-Devastator Log closure
-[ 2020-01-11 18:43:11,715 ]	[ INFO ]	Starting Pi-Devastator
-[ 2020-01-11 18:43:11,715 ]	[ INFO ]	Pi-Devastator Log opened
-[ 2020-01-11 18:43:11,715 ]	[ INFO ]	Setting GPIO mode to BOARD
-[ 2020-01-11 18:43:11,716 ]	[ INFO ]	Setting up GPIO PINs
-[ 2020-01-11 18:43:11,716 ]	[ INFO ]	Flashing light
-[ 2020-01-11 18:43:21,727 ]	[ INFO ]	Cleaning GPIO PINs
-[ 2020-01-11 18:43:21,727 ]	[ INFO ]	Pi-Devastator Log closure
-[ 2020-01-11 18:50:20,144 ]	[ INFO ]	Starting Pi-Devastator
-[ 2020-01-11 18:50:20,144 ]	[ INFO ]	Pi-Devastator Log opened
-[ 2020-01-11 18:50:20,144 ]	[ INFO ]	Setting GPIO mode to BOARD
-[ 2020-01-11 18:50:20,144 ]	[ INFO ]	Setting up GPIO PINs
-[ 2020-01-11 18:50:20,145 ]	[ INFO ]	Flashing light
-[ 2020-01-11 18:50:30,156 ]	[ INFO ]	Cleaning GPIO PINs
-[ 2020-01-11 18:50:30,156 ]	[ INFO ]	Pi-Devastator Log closure
-[ 2020-01-11 18:53:16,053 ]	[ INFO ]	Starting Pi-Devastator
-[ 2020-01-11 18:53:16,054 ]	[ INFO ]	Pi-Devastator Log opened
-[ 2020-01-11 18:53:16,054 ]	[ INFO ]	Setting GPIO mode to BOARD
-[ 2020-01-11 18:53:16,054 ]	[ INFO ]	Setting up GPIO PINs
-[ 2020-01-11 18:53:16,055 ]	[ INFO ]	Flashing light
-[ 2020-01-11 18:53:26,066 ]	[ INFO ]	Cleaning GPIO PINs
-[ 2020-01-11 18:53:26,066 ]	[ INFO ]	Pi-Devastator Log closure
-[ 2020-01-11 18:53:44,955 ]	[ INFO ]	Starting Pi-Devastator
-[ 2020-01-11 18:53:44,955 ]	[ INFO ]	Pi-Devastator Log opened
-[ 2020-01-11 18:53:44,956 ]	[ INFO ]	Setting GPIO mode to BOARD
-[ 2020-01-11 18:53:44,956 ]	[ INFO ]	Setting up GPIO PINs
-[ 2020-01-11 18:53:44,956 ]	[ INFO ]	Flashing light
-[ 2020-01-11 18:53:54,967 ]	[ INFO ]	Cleaning GPIO PINs
-[ 2020-01-11 18:53:54,968 ]	[ INFO ]	Pi-Devastator Log closure
-[ 2020-01-11 18:54:42,201 ]	[ INFO ]	Starting Pi-Devastator
-[ 2020-01-11 18:54:42,202 ]	[ INFO ]	Pi-Devastator Log opened
-[ 2020-01-11 18:54:42,202 ]	[ INFO ]	Setting GPIO mode to BOARD
-[ 2020-01-11 18:54:42,203 ]	[ INFO ]	Setting up GPIO PINs
-[ 2020-01-11 18:54:42,203 ]	[ INFO ]	Flashing light
-[ 2020-01-11 18:54:47,210 ]	[ INFO ]	Cleaning GPIO PINs
-[ 2020-01-11 18:54:47,210 ]	[ INFO ]	Pi-Devastator Log closure
-[ 2020-01-11 22:52:16,204 ]	[ INFO ]	Starting Pi-Devastator
-[ 2020-01-11 22:52:16,205 ]	[ INFO ]	Pi-Devastator Log opened
-[ 2020-01-11 22:52:16,205 ]	[ INFO ]	Setting GPIO mode to BOARD
-[ 2020-01-11 22:52:16,206 ]	[ INFO ]	Setting up GPIO PINs
-[ 2020-01-11 22:52:16,206 ]	[ INFO ]	Flashing light
-[ 2020-01-11 22:52:21,212 ]	[ INFO ]	Cleaning GPIO PINs
-[ 2020-01-11 22:52:21,217 ]	[ INFO ]	Pi-Devastator Log closure
-[ 2020-01-11 22:59:04,365 ]	[ INFO ]	Starting Pi-Devastator
-[ 2020-01-11 22:59:04,365 ]	[ INFO ]	Pi-Devastator Log opened
-[ 2020-01-11 22:59:04,366 ]	[ INFO ]	Setting GPIO mode to BOARD
-[ 2020-01-11 22:59:04,366 ]	[ INFO ]	Setting up GPIO PINs
-[ 2020-01-11 22:59:04,367 ]	[ INFO ]	Flashing light
-[ 2020-01-11 22:59:09,372 ]	[ INFO ]	Cleaning GPIO PINs
-[ 2020-01-11 22:59:09,373 ]	[ INFO ]	Pi-Devastator Log closure
-[ 2020-01-11 23:02:56,277 ]	[ INFO ]	Starting Pi-Devastator
-[ 2020-01-11 23:02:56,278 ]	[ INFO ]	Pi-Devastator Log opened
-[ 2020-01-11 23:02:56,278 ]	[ INFO ]	Setting GPIO mode to BOARD
-[ 2020-01-11 23:02:56,279 ]	[ INFO ]	Setting up GPIO PINs
-[ 2020-01-11 23:02:56,279 ]	[ INFO ]	Flashing light
-[ 2020-01-11 23:03:01,285 ]	[ INFO ]	Cleaning GPIO PINs
-[ 2020-01-11 23:03:01,290 ]	[ INFO ]	Pi-Devastator Log closure
-[ 2020-01-11 23:03:49,520 ]	[ INFO ]	Starting Pi-Devastator
-[ 2020-01-11 23:03:49,521 ]	[ INFO ]	Pi-Devastator Log opened
-[ 2020-01-11 23:03:49,521 ]	[ INFO ]	Setting GPIO mode to BOARD
-[ 2020-01-11 23:04:06,850 ]	[ INFO ]	Starting Pi-Devastator
-[ 2020-01-11 23:04:06,851 ]	[ INFO ]	Pi-Devastator Log opened
-[ 2020-01-11 23:04:06,851 ]	[ INFO ]	Setting GPIO mode to BOARD
-[ 2020-01-11 23:04:06,851 ]	[ INFO ]	[Light] - Setting up GPIO pin
-[ 2020-01-11 23:04:11,857 ]	[ INFO ]	Cleaning GPIO PINs
-[ 2020-01-11 23:04:11,858 ]	[ INFO ]	Pi-Devastator Log closure
-[ 2020-01-11 23:04:16,237 ]	[ INFO ]	Starting Pi-Devastator
-[ 2020-01-11 23:04:16,238 ]	[ INFO ]	Pi-Devastator Log opened
-[ 2020-01-11 23:04:16,238 ]	[ INFO ]	Setting GPIO mode to BOARD
-[ 2020-01-11 23:04:16,239 ]	[ INFO ]	[Light] - Setting up GPIO pin
-[ 2020-01-11 23:04:21,246 ]	[ INFO ]	Cleaning GPIO PINs
-[ 2020-01-11 23:04:21,247 ]	[ INFO ]	Pi-Devastator Log closure
-[ 2020-01-11 23:04:22,629 ]	[ INFO ]	Starting Pi-Devastator
-[ 2020-01-11 23:04:22,629 ]	[ INFO ]	Pi-Devastator Log opened
-[ 2020-01-11 23:04:22,630 ]	[ INFO ]	Setting GPIO mode to BOARD
-[ 2020-01-11 23:04:22,630 ]	[ INFO ]	[Light] - Setting up GPIO pin
-[ 2020-01-11 23:04:27,636 ]	[ INFO ]	Cleaning GPIO PINs
-[ 2020-01-11 23:04:27,641 ]	[ INFO ]	Pi-Devastator Log closure
-[ 2020-01-11 23:06:37,878 ]	[ INFO ]	Starting Pi-Devastator
-[ 2020-01-11 23:06:37,878 ]	[ INFO ]	Pi-Devastator Log opened
-[ 2020-01-11 23:06:37,879 ]	[ INFO ]	Setting GPIO mode to BOARD
-[ 2020-01-11 23:06:37,879 ]	[ INFO ]	[Wheels] - Initialisation..
-[ 2020-01-11 23:06:37,879 ]	[ INFO ]	[Wheels] - Setting up GPIO pins
-[ 2020-01-11 23:06:37,880 ]	[ INFO ]	[Light] - Setting up GPIO pin
-[ 2020-01-11 23:06:42,886 ]	[ INFO ]	Cleaning GPIO PINs
-[ 2020-01-11 23:06:42,887 ]	[ INFO ]	Pi-Devastator Log closure
+[ 2020-01-11 23:30:16,878 ]	[ INFO ]	[Pi-Devastator] - Log opened
+[ 2020-01-11 23:30:16,879 ]	[ INFO ]	[Pi-Devastator] - Starting Pi-Devastator
+[ 2020-01-11 23:30:16,880 ]	[ INFO ]	[Pi-Devastator] - Setting GPIO mode to BOARD
+[ 2020-01-11 23:30:16,881 ]	[ INFO ]	[Wheels] - Initialisation..
+[ 2020-01-11 23:30:16,882 ]	[ INFO ]	[Wheels] - Setting up GPIO pins
+[ 2020-01-11 23:30:16,882 ]	[ INFO ]	[Light] - Setting up GPIO pin
+[ 2020-01-11 23:30:16,890 ]	[ INFO ]	[Light] - Flashing..
+[ 2020-01-11 23:30:30,238 ]	[ INFO ]	[Pi-Devastator] - Cleaning GPIO pins..
+[ 2020-01-11 23:30:30,238 ]	[ INFO ]	[Pi-Devastator] - Log closure
+[ 2020-01-11 23:32:29,712 ]	[ INFO ]	[Pi-Devastator] - Log opened
+[ 2020-01-11 23:32:29,713 ]	[ INFO ]	[Pi-Devastator] - Starting Pi-Devastator
+[ 2020-01-11 23:32:29,713 ]	[ INFO ]	[Pi-Devastator] - Setting GPIO mode to BOARD
+[ 2020-01-11 23:32:29,713 ]	[ INFO ]	[Wheels] - Initialisation..
+[ 2020-01-11 23:32:29,713 ]	[ INFO ]	[Wheels] - Setting up GPIO pins
+[ 2020-01-11 23:32:29,714 ]	[ INFO ]	[Light] - Setting up GPIO pin
+[ 2020-01-11 23:32:29,715 ]	[ INFO ]	[Light] - Flashing..
+[ 2020-01-11 23:32:39,258 ]	[ INFO ]	[Pi-Devastator] - Cleaning GPIO pins..
+[ 2020-01-11 23:32:39,259 ]	[ INFO ]	[Pi-Devastator] - Log closure
+[ 2020-01-11 23:33:46,253 ]	[ INFO ]	[Pi-Devastator] - Log opened
+[ 2020-01-11 23:33:46,254 ]	[ INFO ]	[Pi-Devastator] - Starting Pi-Devastator
+[ 2020-01-11 23:33:46,254 ]	[ INFO ]	[Pi-Devastator] - Setting GPIO mode to BOARD
+[ 2020-01-11 23:33:46,254 ]	[ INFO ]	[Wheels] - Initialisation..
+[ 2020-01-11 23:33:46,255 ]	[ INFO ]	[Wheels] - Setting up GPIO pins
+[ 2020-01-11 23:33:46,255 ]	[ INFO ]	[Light] - Setting up GPIO pin
+[ 2020-01-11 23:33:46,257 ]	[ INFO ]	[Light] - Flashing..
+[ 2020-01-11 23:33:56,632 ]	[ INFO ]	[Pi-Devastator] - Cleaning GPIO pins..
+[ 2020-01-11 23:33:56,632 ]	[ INFO ]	[Pi-Devastator] - Log closure
