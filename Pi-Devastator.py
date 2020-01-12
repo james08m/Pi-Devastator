@@ -3,6 +3,15 @@ import datetime
 import time
 import logging
 
+from Wheels import *
+from Light import *
+
+PIN_MOTOR_A1 = 7
+PIN_MOTOR_A2 = 11
+PIN_MOTOR_B1 = 13
+PIN_MOTOR_B2 = 15
+PIN_LIGHT = 16
+
 #################################
 #!# PiDevastator Main Program #!#
 #################################
@@ -35,32 +44,30 @@ if __name__ == "__main__":
     # Add the console handler to logger
     logger.addHandler(console_handler)
 
+    logger.info("Starting Pi-Devastator")
     logger.info("Pi-Devastator Log opened")
+    PiDevastator_On = True
 
-    # GPIO and PINs Initialisation
-    logger.debug("GPIO and PINs Initialisation")
+    # GPIO Mode
+    logger.info("Setting GPIO mode to BOARD")
     GPIO.setmode(GPIO.BOARD)
 
-    PIN_MOTOR_1_FORWARD = 7
-    PIN_MOTOR_1_BACKWARD = 11
-    PIN_MOTOR_2_FORWARD = 13
-    PIN_MOTOR_2_BACKWARD = 15
-    PIN_LIGHT_1 = 16
-    PIN_LIGHT_2 = 18
-    PIN_IR_RECEIVER = 22
+    # Inititialise components
+    wheels = Wheels(logger,
+                    PIN_MOTOR_A1,
+                    PIN_MOTOR_A2,
+                    PIN_MOTOR_B1,
+                    PIN_MOTOR_B2)
+    
+    light = Light(logger, PIN_LIGHT)
+    
+    # Signal initialisation complete
+    light.flash(5)
 
-    GPIO.setup(PIN_MOTOR_1_FORWARD, GPIO.OUT)
-    GPIO.setup(PIN_MOTOR_1_BACKWARD, GPIO.OUT)
-    GPIO.setup(PIN_MOTOR_2_FORWARD, GPIO.OUT)
-    GPIO.setup(PIN_MOTOR_2_BACKWARD, GPIO.OUT)
-    GPIO.setup(PIN_LIGHT_1, GPIO.OUT)
-    GPIO.setup(PIN_LIGHT_2, GPIO.OUT)
-    GPIO.setup(PIN_IR_RECEIVER, GPIO.INPUT)
+    #while(PiDevastator_On):
+       # print "do work"
 
-    PiDevastator_On = True
-    while(PiDevastator_On):
-        print "do work"
-
+    logger.info("Cleaning GPIO PINs")
     GPIO.cleanup() # Clear all GPIO pins for next utilisation
 
     logger.info("Pi-Devastator Log closure")
