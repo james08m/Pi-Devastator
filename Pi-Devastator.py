@@ -66,6 +66,7 @@ if __name__ == "__main__":
     # Initialise curses screen
     screen = curses.initscr()
     curses.cbreak()
+    curses.halfdelay(5) # set a delay to screen.getch() 
     #curses.noecho()
     screen.keypad(True)
 

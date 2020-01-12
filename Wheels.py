@@ -46,6 +46,5 @@ class Wheels():
         self.setMotorB(True, False)
         
     def stop(self):
-        self.logger.info("[ Wheels ]\t All Stop")
         self.setMotorA(False, False)
         self.setMotorB(False, False)
