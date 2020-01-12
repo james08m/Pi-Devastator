@@ -5,7 +5,7 @@ class Wheels():
     # Initialise wheels
     def __init__(self, logger, pin_a1, pin_a2, pin_b1, pin_b2):
         self.logger = logger
-        self.logger.info("[Wheels] - Initialisation..")
+        self.logger.info("[ Wheels ]\t  Initialisation..")
         
         # Assigning pins
         self.pin_motor_a1 = pin_a1
@@ -14,7 +14,7 @@ class Wheels():
         self.pin_motor_b2 = pin_b2
         
         # Setting up GPIO pins
-        self.logger.info("[Wheels] - Setting up GPIO pins")
+        self.logger.info("[ Wheels ]\t Setting up GPIO pins")
         GPIO.setup(self.pin_motor_a1, GPIO.OUT)
         GPIO.setup(self.pin_motor_a2, GPIO.OUT)
         GPIO.setup(self.pin_motor_b1, GPIO.OUT)
@@ -44,3 +44,8 @@ class Wheels():
     def turnLeft(self):
         self.setMotorA(False, True)
         self.setMotorB(True, False)
+        
+    def stop(self):
+        self.logger.info("[ Wheels ]\t All Stop")
+        self.setMotorA(False, False)
+        self.setMotorB(False, False)

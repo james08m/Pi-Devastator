@@ -44,46 +44,61 @@ if __name__ == "__main__":
 
     # Add the console handler to logger
     logger.addHandler(console_handler)
-    logger.info("[Pi-Devastator] - Log opened")
-    logger.info("[Pi-Devastator] - Starting Pi-Devastator")
+    logger.info("[Devastator]\t Log opened")
+    logger.info("[Devastator]\t Starting Pi-Devastator")
     
     PiDevastator_On = True
 
     # GPIO Mode
-    logger.info("[Pi-Devastator] - Setting GPIO mode to BOARD")
+    logger.info("[Devastator]\t Setting GPIO mode to BOARD")
     GPIO.setmode(GPIO.BOARD)
 
     # Inititialise components
-    wheels = Wheels(logger,
-                    PIN_MOTOR_A1,
-                    PIN_MOTOR_A2,
-                    PIN_MOTOR_B1,
-                    PIN_MOTOR_B2)
+    wheels = Wheels(logger, PIN_MOTOR_A1, PIN_MOTOR_A2, PIN_MOTOR_B1, PIN_MOTOR_B2)
+    wheels.stop() # Make sure wheels don't move 
     
     light = Light(logger, PIN_LIGHT)
     
-    # Initialise curses
-    screen = curses.initscr()
-    screen.keypad(True)
-    
     # Signal initialisation complete
-    light.flash(5)
+    light.flash(3)
     light.turnOn()
+    
+    # Initialise curses screen
+    screen = curses.initscr()
+    curses.cbreak()
+    #curses.noecho()
+    screen.keypad(True)
 
     # Event loop
     while(PiDevastator_On):
-       char = screen.getch()
+        char = screen.getch()
        
-       if char == ord('q'):
-           PiDevastator_On = False;
+        if char == ord('q'):
+            PiDevastator_On = False;
+        elif char == curses.KEY_UP:
+            wheels.goFoward()
+        elif char == curses.KEY_DOWN:
+            wheels.goBackward()
+        elif char == curses.KEY_RIGHT:
+            wheels.turnRight()
+        elif char == curses.KEY_LEFT:
+            wheels.turnLeft()
+        elif char == ord('p'):
+            wheels.stop()
+        else:
+            wheels.stop()
+       
+           
 
-    logging.info("[Pi-Devastator] - Closing curses..")
+    logging.info("[Devastator]\t Closing curses..")
     screen.keypad(False)
+    curses.nocbreak()
+    #curses.echo()
     curses.endwin()
-    logging.info("[Pi-Devastator] - Closing curses..")
+    logging.info("[Devastator]\t Closing curses..")
     
-    logger.info("[Pi-Devastator] - Cleaning GPIO pins..")
+    logger.info("[Devastator]\t Cleaning GPIO pins..")
     GPIO.cleanup()
 
-    logger.info("[Pi-Devastator] - Log closure")
+    logger.info("[Devastator]\t Log closure")
 

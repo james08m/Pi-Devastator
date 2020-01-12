@@ -9,7 +9,7 @@ class Light():
         self.pin = pin
         
         # Setting up GPIO pins
-        self.logger.info("[Light] - Setting up GPIO pin")
+        self.logger.info("[ Light ]\t Setting up GPIO pin")
         GPIO.setup(self.pin, GPIO.OUT)
     
     def turnOn(self):
@@ -19,7 +19,7 @@ class Light():
         GPIO.output(self.pin, False)
         
     def flash(self, value):
-        self.logger.info("[Light] - Flashing..")
+        self.logger.info("[ Light ]\t Flashing..")
         for x in range(value):
             self.turnOn()
             time.sleep(0.5)
