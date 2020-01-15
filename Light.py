@@ -5,8 +5,8 @@ class Light():
 
     # Initialise wheels
     def __init__(self, logger, pin):
-        self.logger.info("[ Light ]\t Initialisation..")
         self.logger = logger
+        self.logger.info("[ Light ]\t Initialisation..")
         self.pin = pin
 
         # Setting up GPIO pins

@@ -69,6 +69,7 @@ if __name__ == "__main__":
      # Set a delay to screen.getch()
      # Value to be determined (need phisical test) nodelay will probably to de work with the Counter implemented
     curses.halfdelay(5)
+    #screen.nodelay(True)
     #curses.noecho()
     screen.keypad(True)
 
@@ -93,11 +94,10 @@ if __name__ == "__main__":
             no_key_pressed_count = 0
             wheels.turnLeft()
         else:
-            no_key_pressed_count++
-            if no_key_pressed_count > 10: # Coutner value to determined (need phisical test)
-                wheels.stop()
+            no_key_pressed_count += 1
+            wheels.stop()
 
-
+    
 
     logging.info("[Devastator]\t Closing curses..")
     screen.keypad(False)
