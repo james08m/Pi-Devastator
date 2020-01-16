@@ -6,12 +6,15 @@ import logging
 
 from Wheels import *
 from Light import *
+from RangeSensor import *
 
 PIN_MOTOR_A1 = 7
 PIN_MOTOR_A2 = 11
 PIN_MOTOR_B1 = 13
 PIN_MOTOR_B2 = 15
 PIN_LIGHT = 16
+PIN_TRIGGER = 0
+PIN_ECHOE = 0
 
 #################################
 #!# PiDevastator Main Program #!#
@@ -53,51 +56,47 @@ if __name__ == "__main__":
     logger.info("[Devastator]\t Setting GPIO mode to BOARD")
     GPIO.setmode(GPIO.BOARD)
 
-    # Inititialise components
+    # Inititialise wheels
     wheels = Wheels(logger, PIN_MOTOR_A1, PIN_MOTOR_A2, PIN_MOTOR_B1, PIN_MOTOR_B2)
     wheels.stop() # Make sure wheels don't move
 
+    # Inititialise status light
     light = Light(logger, PIN_LIGHT)
 
-    # Signal initialisation complete
+    # Initialise RangeSensor and start thread
+    range_sensor = RangeSensor(logger, PIN_TRIGGER, PIN_ECHOE)
+    range_sensor.run()
+
+    # Signal components initialisation is completed
     light.flash(3)
     light.turnOn()
 
     # Initialise curses screen
     screen = curses.initscr()
     curses.cbreak()
-     # Set a delay to screen.getch()
-     # Value to be determined (need phisical test) nodelay will probably to de work with the Counter implemented
+
+    # Set a delay to screen.getch() so it is not blocking
     curses.halfdelay(5)
-    #screen.nodelay(True)
     #curses.noecho()
     screen.keypad(True)
 
-    # Event loop
-    # Counter implemented to stop wheels smoothly when key released
-    no_key_pressed_count = 0
+    # Pi-Devastator events loop
     while(PiDevastator_On):
         char = screen.getch()
 
         if char == ord('q'):
             PiDevastator_On = False;
         elif char == curses.KEY_UP:
-            no_key_pressed_count = 0
             wheels.goFoward()
         elif char == curses.KEY_DOWN:
-            no_key_pressed_count = 0
             wheels.goBackward()
         elif char == curses.KEY_RIGHT:
-            no_key_pressed_count = 0
             wheels.turnRight()
         elif char == curses.KEY_LEFT:
-            no_key_pressed_count = 0
             wheels.turnLeft()
         else:
-            no_key_pressed_count += 1
             wheels.stop()
 
-    
 
     logging.info("[Devastator]\t Closing curses..")
     screen.keypad(False)
