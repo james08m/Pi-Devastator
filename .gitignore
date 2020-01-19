@@ -1,3 +1,5 @@
 # Type of files to ignore
 *.log
+*.debug
 *.pyc
+
