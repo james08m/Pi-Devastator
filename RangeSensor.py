@@ -1,6 +1,6 @@
 import RPi.GPIO as GPIO
-import threading
 import time
+import threading
 
 class RangeSensor(threading.Thread):
 
@@ -12,7 +12,7 @@ class RangeSensor(threading.Thread):
         self.pin_trigger = trigger
         self.pin_echo = echo
 
-        self.running = true
+        self.running = True
         self.distance = 0
         self.previous_distance = 0
 
@@ -23,9 +23,12 @@ class RangeSensor(threading.Thread):
 
         # Make sure trigger start low
         GPIO.output(self.pin_trigger, False)
+        
+    def getDistance(self):
+        return self.distance
 
     def stop(self):
-        self.running = Fasle
+        self.running = False
         self.logger.info("[RangeSensor]\t Thread Stopped")
 
 
@@ -42,20 +45,18 @@ class RangeSensor(threading.Thread):
             time.sleep(0.00001)
             GPIO.output(self.pin_trigger, False)
 
-            # Not sure if really needed (to be determined during test)
-            start_time = time.time()
-            end_time = time.time()
-
             # register when signal is sent (will quit loop by going to 1)
-            while GPIO.input(GPIO_ECHO) == 0:
+            while GPIO.input(self.pin_echo) == 0:
                 start_time = time.time()
 
             # register when signal has returned (will quit loop by going to 0)
-            while GPIO.input(GPIO_ECHO) == 1:
+            while GPIO.input(self.pin_echo) == 1:
                 end_time = time.time()
 
             # Calculate the time it took for the wave to come back
-            time = start_time - end_time
+            elapsed_time =  end_time - start_time
 
             # * by sonic speed per cm (34300) and / by 2 has the wave travel the distance twice
-            self.distance = (TimeElapsed * 34300) / 2
+            self.distance = (elapsed_time * 34300) / 2
+            
+            time.sleep(0.5)

@@ -1,5 +1,6 @@
 import RPi.GPIO as GPIO
-import curses
+import pygame
+import sys
 import datetime
 import time
 import logging
@@ -8,13 +9,15 @@ from Wheels import *
 from Light import *
 from RangeSensor import *
 
+GPIO.cleanup()
+
 PIN_MOTOR_A1 = 7
 PIN_MOTOR_A2 = 11
 PIN_MOTOR_B1 = 13
 PIN_MOTOR_B2 = 15
 PIN_LIGHT = 16
-PIN_TRIGGER = 0
-PIN_ECHOE = 0
+PIN_TRIGGER = 18
+PIN_ECHOE = 22
 
 #################################
 #!# PiDevastator Main Program #!#
@@ -65,46 +68,52 @@ if __name__ == "__main__":
 
     # Initialise RangeSensor and start thread
     range_sensor = RangeSensor(logger, PIN_TRIGGER, PIN_ECHOE)
-    range_sensor.run()
+    range_sensor.start()
 
     # Signal components initialisation is completed
     light.flash(3)
     light.turnOn()
 
-    # Initialise curses screen
-    screen = curses.initscr()
-    curses.cbreak()
+    # Initialise pygame
+    pygame.init()
+    pygame.display.set_mode((1, 1))
 
-    # Set a delay to screen.getch() so it is not blocking
-    curses.halfdelay(5)
-    #curses.noecho()
-    screen.keypad(True)
 
     # Pi-Devastator events loop
     while(PiDevastator_On):
-        char = screen.getch()
+        
+        print(range_sensor.getDistance())
+        
+        for event in pygame.event.get():
+            
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_q:
+                    PiDevastator_On = False
+                    range_sensor.stop()
+                elif event.key == pygame.K_UP:
+                    wheels.goFoward()
+                elif event.key == pygame.K_DOWN:
+                    wheels.goBackward()
+                elif event.key == pygame.K_LEFT:
+                    wheels.turnLeft()
+                elif event.key == pygame.K_RIGHT:
+                    wheels.turnRight()
+                else:
+                    pass
 
-        if char == ord('q'):
-            PiDevastator_On = False;
-        elif char == curses.KEY_UP:
-            wheels.goFoward()
-        elif char == curses.KEY_DOWN:
-            wheels.goBackward()
-        elif char == curses.KEY_RIGHT:
-            wheels.turnRight()
-        elif char == curses.KEY_LEFT:
-            wheels.turnLeft()
-        else:
-            wheels.stop()
-
-
-    logging.info("[Devastator]\t Closing curses..")
-    screen.keypad(False)
-    curses.nocbreak()
-    #curses.echo()
-    curses.endwin()
-    logging.info("[Devastator]\t Closing curses..")
-
+            if event.type == pygame.KEYUP:
+                if event.key == pygame.K_UP:
+                    wheels.stop()
+                elif event.key == pygame.K_DOWN:
+                    wheels.stop()
+                elif event.key == pygame.K_LEFT:
+                    wheels.stop()
+                elif event.key == pygame.K_RIGHT:
+                    wheels.stop()
+    
+    # Wait for the RangeSensor thread to finish
+    range_sensor.join()
+            
     logger.info("[Devastator]\t Cleaning GPIO pins..")
     GPIO.cleanup()
 
