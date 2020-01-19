@@ -22,7 +22,6 @@ PIN_ECHOE = 22
 #################################
 #!# PiDevastator Main Program #!#
 #################################
-
 if __name__ == "__main__":
 
     # Get actual date and set path and file name for the log
@@ -78,14 +77,16 @@ if __name__ == "__main__":
     pygame.init()
     pygame.display.set_mode((1, 1))
 
-
-    # Pi-Devastator events loop
+    # Pi-Devastator main loop
     while(PiDevastator_On):
-        
+
+    	# Display distance 
         print(range_sensor.getDistance())
         
+        # Pygame event loop
         for event in pygame.event.get():
             
+            # Event keys down
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_q:
                     PiDevastator_On = False
@@ -101,6 +102,7 @@ if __name__ == "__main__":
                 else:
                     pass
 
+            # Event keys up        
             if event.type == pygame.KEYUP:
                 if event.key == pygame.K_UP:
                     wheels.stop()
@@ -110,11 +112,14 @@ if __name__ == "__main__":
                     wheels.stop()
                 elif event.key == pygame.K_RIGHT:
                     wheels.stop()
+
     
     # Wait for the RangeSensor thread to finish
     range_sensor.join()
-            
+    
+    # Cleaning GPIO pins        
     logger.info("[Devastator]\t Cleaning GPIO pins..")
     GPIO.cleanup()
 
+    # Log last entry for closure
     logger.info("[Devastator]\t Log closure")
