@@ -9,8 +9,6 @@ from Wheels import *
 from Light import *
 from RangeSensor import *
 
-GPIO.cleanup()
-
 PIN_MOTOR_A1 = 7
 PIN_MOTOR_A2 = 11
 PIN_MOTOR_B1 = 13

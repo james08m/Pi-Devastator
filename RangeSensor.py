@@ -17,7 +17,7 @@ class RangeSensor(threading.Thread):
 
         # Setting up GPIO pins
         try:
-            self.logger.info("[RangeSensor]\t Setting up GPIO pin")
+            self.logger.info("[RangeSensor]\t Setting up GPIO pins")
             GPIO.setup(self.pin_trigger, GPIO.OUT)
             GPIO.setup(self.pin_echo, GPIO.IN)
         except e:
@@ -41,6 +41,9 @@ class RangeSensor(threading.Thread):
 
             # save last distance measured
             self.previous_distance = self.distance
+            
+            start_time = time.time()
+            end_time = time.time()
 
             try:
                 # set trigger to hight
