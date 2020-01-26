@@ -9,13 +9,15 @@ from Wheels import *
 from Light import *
 from RangeSensor import *
 
-PIN_MOTOR_A1 = 7
-PIN_MOTOR_A2 = 11
-PIN_MOTOR_B1 = 13
-PIN_MOTOR_B2 = 15
-PIN_LIGHT = 16
-PIN_TRIGGER = 18
-PIN_ECHOE = 22
+PIN_MOTOR_A1 = 29
+PIN_MOTOR_A2 = 31
+#PIN_MOTOR_A3 = 32
+PIN_MOTOR_B1 = 36
+PIN_MOTOR_B2 = 37
+#PIN_MOTOR_B3 = 33
+PIN_LIGHT = 22
+PIN_TRIGGER = 11
+PIN_ECHOE = 13
 
 #################################
 #!# PiDevastator Main Program #!#
