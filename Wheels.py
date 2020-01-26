@@ -17,7 +17,7 @@ class Wheels():
 
         try:
             # Setting up GPIO pins
-            self.logger.info("[ Wheels ]\t Setting up GPIO pins")
+            self.logger.info("[ Wheels ]\t Setting up GPIO pins " + self.pin_motor_a1 + ", " + self.pin_motor_a2 + ", " + self.pin_motor_b1 + ", " + self.pin_motor_b2)
             GPIO.setup(self.pin_motor_a1, GPIO.OUT)
             GPIO.setup(self.pin_motor_a2, GPIO.OUT)
             GPIO.setup(self.pin_motor_b1, GPIO.OUT)

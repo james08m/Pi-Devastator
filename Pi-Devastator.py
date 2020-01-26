@@ -118,7 +118,7 @@ if __name__ == "__main__":
     range_sensor.join()
     
     # Cleaning GPIO pins        
-    logger.info("[Devastator]\t Cleaning GPIO pins..")
+    logger.info("[Devastator]\t Cleaning all GPIO pins")
     GPIO.cleanup()
 
     # Log last entry for closure
