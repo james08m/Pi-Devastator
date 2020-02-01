@@ -1,5 +1,8 @@
 from enum import Enum
 
+#################################
+## Direction Enumeration Class ##
+#################################
 class Direction(Enum):
 	NONE  = 0
 	FRONT = 1
