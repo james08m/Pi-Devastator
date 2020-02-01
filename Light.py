@@ -1,6 +1,9 @@
 import RPi.GPIO as GPIO
 import time
 
+#################
+## Light Class ##
+#################
 class Light():
 
     # Initialise wheels

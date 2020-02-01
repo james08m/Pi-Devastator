@@ -20,10 +20,14 @@ PIN_LIGHT = 22
 PIN_TRIGGER = 11
 PIN_ECHOE = 13
 
-#################################
-#!# PiDevastator Main Program #!#
-#################################
+###############################
+## PiDevastator Main Program ##
+###############################
 if __name__ == "__main__":
+
+    ####################################
+    ## Set Logger and Console Handler ##
+    ####################################
 
     # Get actual date and set path and file name for the log
     date = datetime.datetime.now()
@@ -56,9 +60,16 @@ if __name__ == "__main__":
     PiDevastator_On = True
     PiShutdown = False
 
-    # GPIO Mode
+    ####################
+    ##  Set GPIO Mode ##
+    ####################
+    
     logger.info("[Devastator]\t Setting GPIO mode to BOARD")
     GPIO.setmode(GPIO.BOARD)
+    
+    ########################
+    ##  Robot Components  ##
+    ########################
 
     # Inititialise wheels
     wheels = Wheels(logger, PIN_MOTOR_A1, PIN_MOTOR_A2, PIN_MOTOR_B1, PIN_MOTOR_B2)
@@ -75,11 +86,15 @@ if __name__ == "__main__":
     light.flash(3)
     light.turnOn()
 
-    # Initialise pygame
+    #######################
+    ## Initialise pygame ##
+    #######################
     pygame.init()
     pygame.display.set_mode((1, 1))
 
-    # Pi-Devastator main loop
+    #############################
+    ## Pi-Devastator main loop ##
+    #############################
     while(PiDevastator_On):
 
     	# Display distance 

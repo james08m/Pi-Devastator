@@ -2,6 +2,9 @@ import RPi.GPIO as GPIO
 import time
 import threading
 
+#################################
+## RangeSensor Interface Class ##
+#################################
 class RangeSensor(threading.Thread):
 
     # Initialise wheels

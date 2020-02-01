@@ -1,5 +1,8 @@
 import RPi.GPIO as GPIO
 
+############################
+## Wheels Interface Class ##
+############################
 class Wheels():
 
     # Initialise wheels
