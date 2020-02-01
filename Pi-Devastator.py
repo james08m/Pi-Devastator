@@ -1,4 +1,5 @@
 import RPi.GPIO as GPIO
+import os
 import pygame
 import sys
 import datetime
@@ -26,7 +27,7 @@ if __name__ == "__main__":
 
     # Get actual date and set path and file name for the log
     date = datetime.datetime.now()
-    file_path = "./log/{}{}".format(date.strftime("%Y-%m-%d"), ".log") # Log file for every day
+    file_path = "/home/pi/Pi-Devastator/log/{}{}".format(date.strftime("%Y-%m-%d"), ".log") # Log file for every day
 
     # Uses %(<dictionary key>)s styled string substitution; the possible keys are documented in LogRecord attributes.
     log_format = "[ %(asctime)s ]\t[ %(levelname)s ]\t%(message)s" # Log format time-level-message
@@ -53,6 +54,7 @@ if __name__ == "__main__":
     logger.info("[Devastator]\t Starting Pi-Devastator")
 
     PiDevastator_On = True
+    PiShutdown = False
 
     # GPIO Mode
     logger.info("[Devastator]\t Setting GPIO mode to BOARD")
@@ -91,6 +93,10 @@ if __name__ == "__main__":
                 if event.key == pygame.K_q:
                     PiDevastator_On = False
                     range_sensor.stop()
+                elif event.key == pygame.K_s:
+                    PiShutdown = True
+                    range_sensor.stop()
+                    PiDevastator_On = False
                 elif event.key == pygame.K_UP:
                     wheels.goFoward()
                 elif event.key == pygame.K_DOWN:
@@ -123,3 +129,15 @@ if __name__ == "__main__":
 
     # Log last entry for closure
     logger.info("[Devastator]\t Log closure")
+    logger.info("--------------------------")
+    logger.info("--------------------------")
+        
+
+    # Shutdown Raspberry Pi if requested
+    if PiShutdown == True:
+        time.sleep(0.1)
+        logger.info("[ PI ]\t SHUTDOWN NOW")
+        logger.info("[Devastator]\t Log closure")
+        logger.info("--------------------------")
+        logger.info("--------------------------")
+        os.system('sudo shutdown now')

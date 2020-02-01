@@ -10,7 +10,7 @@ class Light():
         self.pin = pin
 
         # Setting up GPIO pins
-        self.logger.info("[ Light ]\t Setting up GPIO pin " + self.pin)
+        self.logger.info("[ Light ]\t Setting up GPIO pin " + str(self.pin))
         GPIO.setup(self.pin, GPIO.OUT)
 
     def turnOn(self):

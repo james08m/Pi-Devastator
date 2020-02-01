@@ -17,7 +17,7 @@ class RangeSensor(threading.Thread):
 
         # Setting up GPIO pins
         try:
-            self.logger.info("[RangeSensor]\t Setting up GPIO pins" + self.pin_trigger + ", " + self.pin_echo)
+            self.logger.info("[RangeSensor]\t Setting up GPIO pins" + str(self.pin_trigger) + ", " + str(self.pin_echo))
             GPIO.setup(self.pin_trigger, GPIO.OUT)
             GPIO.setup(self.pin_echo, GPIO.IN)
         except e:
