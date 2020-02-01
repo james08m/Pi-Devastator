@@ -109,21 +109,32 @@ if __name__ == "__main__":
             
             # Event keys down
             if event.type == pygame.KEYDOWN:
+                
                 if event.key == pygame.K_q:
                     PiDevastator_On = False
                     range_sensor.stop()
+
                 elif event.key == pygame.K_s:
                     PiShutdown = True
                     range_sensor.stop()
                     PiDevastator_On = False
+
                 elif event.key == pygame.K_UP:
+                    direction = Direction.FRONT
                     wheels.goFoward()
+
                 elif event.key == pygame.K_DOWN:
+                    direction = Direction.BACK
                     wheels.goBackward()
+
                 elif event.key == pygame.K_LEFT:
+                    direction = Direction.LEFT
                     wheels.turnLeft()
+
                 elif event.key == pygame.K_RIGHT:
+                    direction = Direction.RIGHT
                     wheels.turnRight()
+
                 else:
                     pass
 
