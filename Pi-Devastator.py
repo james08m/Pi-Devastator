@@ -9,6 +9,7 @@ import logging
 from Wheels import *
 from Light import *
 from RangeSensor import *
+from Direction import * 
 
 PIN_MOTOR_A1 = 29
 PIN_MOTOR_A2 = 31
@@ -63,13 +64,16 @@ if __name__ == "__main__":
     ####################
     ##  Set GPIO Mode ##
     ####################
-    
+
     logger.info("[Devastator]\t Setting GPIO mode to BOARD")
     GPIO.setmode(GPIO.BOARD)
     
     ########################
     ##  Robot Components  ##
     ########################
+
+    # Initisalise Direction
+    direction = Direction.NONE 
 
     # Inititialise wheels
     wheels = Wheels(logger, PIN_MOTOR_A1, PIN_MOTOR_A2, PIN_MOTOR_B1, PIN_MOTOR_B2)
