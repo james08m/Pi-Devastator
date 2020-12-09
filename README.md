@@ -1,4 +1,4 @@
-# Pi-Devastator __[ONGOING]__
+# Pi-Devastator __[PAUSED]__
 
 __Pi-Devastator__ is a robotic project based on a __Raspberry Pi 4__ and developped mainly in __Python__ using the __RPi.GPIO__ and Pygame libraries. The main goal of this project is to control a DFRobot Devastator robot frame using a __Raspberry Pi 4__ with a Rii wireless keyboard. This is a good robot base and I will most likely be able to build further more on top of it in the futur. 
 
